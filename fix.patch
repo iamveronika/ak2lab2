@@ -1,0 +1,31 @@
+From f4106fd66080df0126f6060868b5bf4fdafccde2 Mon Sep 17 00:00:00 2001
+From: Sergii Piatakov <sergii.piatakov@globallogic.com>
+Date: Thu, 15 Nov 2018 15:45:44 +0200
+Subject: [PATCH] mark member-function as `static`
+
+In fact the `Calculator` class doesn't have member-variable, so we can
+mark `Add` and `Mul` as `static` and use them without an instance.
+
+Signed-off-by: Sergii Piatakov <sergii.piatakov@globallogic.com>
+---
+ calculator.h | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/calculator.h b/calculator.h
+index 6b87fdc..35dcb4d 100644
+--- a/calculator.h
++++ b/calculator.h
+@@ -1,5 +1,10 @@
+ class Calculator
+ {
+     public:
++<<<<<<< HEAD
+         int Add (int, int);
++=======
++        static int Add (int, int);
++        static int Mul (double, double);
++>>>>>>> d61d32d (mark member-function as `static`)
+ };
+-- 
+2.35.1.windows.2
+
